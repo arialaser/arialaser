@@ -1,4 +1,5 @@
 
+
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Body Laser Hair Removal Brampton | $100 Sessions | Aria Laser</title>
@@ -259,6 +260,19 @@
             text-align: center;
             margin-bottom: 80px;
             color: var(--charcoal);
+            opacity: 0;
+            animation: fadeInDown 0.7s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .benefits-grid {
@@ -267,16 +281,43 @@
             gap: 48px;
         }
 
+        /* Scroll Fade-In Animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Benefit Card Stagger Animation */
         .benefit-card {
             text-align: center;
             padding: 40px 24px;
             border-radius: 16px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
         }
 
-        .benefit-card:hover {
-            transform: translateY(-8px);
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
+
+        .benefit-card:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-card:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-card:nth-child(3) { animation-delay: 0.3s; }
+        .benefit-card:nth-child(4) { animation-delay: 0.4s; }
 
         .benefit-icon {
             width: 64px;
@@ -324,12 +365,25 @@
             text-align: center;
             transition: all 0.3s ease;
             border: 2px solid transparent;
+            opacity: 0;
+            animation: fadeInScale 0.5s ease forwards;
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         .area-card:hover {
-            border-color: var(--deep-rose);
+            border-color: var(--hot-pink);
             transform: scale(1.05);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(255, 20, 147, 0.1);
         }
 
         .area-name {
@@ -354,7 +408,24 @@
         .step {
             position: relative;
             padding-left: 80px;
+            opacity: 0;
+            animation: slideInLeft 0.6s ease forwards;
         }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .step:nth-child(1) { animation-delay: 0.1s; }
+        .step:nth-child(2) { animation-delay: 0.2s; }
+        .step:nth-child(3) { animation-delay: 0.3s; }
 
         .step-number {
             position: absolute;
@@ -385,6 +456,83 @@
             font-size: 15px;
             color: var(--warm-gray);
             line-height: 1.8;
+        }
+
+        /* Technology Section */
+        .technology {
+            padding: 120px 0;
+            background: var(--white);
+        }
+
+        .tech-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-top: 64px;
+        }
+
+        .tech-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .machine-image {
+            max-width: 60%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .machine-image:hover {
+            transform: scale(1.03) translateY(-5px);
+            box-shadow: 0 16px 50px rgba(255, 20, 147, 0.15);
+        }
+
+        .tech-text h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 36px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: var(--charcoal);
+        }
+
+        .tech-description {
+            font-size: 16px;
+            color: var(--warm-gray);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        .tech-benefits {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .tech-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--charcoal);
+            font-weight: 500;
+        }
+
+        .feature-icon {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--hot-pink), var(--primary-pink));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            font-weight: 700;
+            flex-shrink: 0;
         }
 
         /* Final CTA */
@@ -507,11 +655,12 @@
             background: var(--white);
             padding: 32px;
             border-radius: 16px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .testimonial-card:hover {
             transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         }
 
         .stars {
@@ -611,7 +760,7 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease;
+            transition: max-height 0.4s ease, padding 0.4s ease;
         }
 
         .faq-item.active .faq-answer {
@@ -853,7 +1002,7 @@
                 gap: 20px;
             }
 
-            .benefits, .treatment-areas, .how-it-works {
+            .benefits, .treatment-areas, .how-it-works, .technology {
                 padding: 80px 0;
             }
 
@@ -863,6 +1012,15 @@
 
             .results-grid, .testimonials-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .tech-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .tech-text h3 {
+                font-size: 28px;
             }
 
             .form-row {
@@ -1195,6 +1353,42 @@
                     <div class="step-number">3</div>
                     <h3 class="step-title">Enjoy Smooth Skin</h3>
                     <p class="step-text">See visible results after the first session. Typically 6-8 sessions achieve optimal permanent reduction.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section class="technology">
+        <div class="container">
+            <h2 class="section-title">Advanced Laser Technology</h2>
+            <div class="tech-content">
+                <div class="tech-image">
+                    <img src="https://i.imgur.com/s7pTPqW.png" alt="Soprano Ice Platinum Laser Machine" class="machine-image">
+                </div>
+                <div class="tech-text">
+                    <h3>Soprano Ice Platinum</h3>
+                    <p class="tech-description">
+                        We use the industry-leading <strong>Soprano Ice Platinum</strong> laser system - the most advanced laser hair removal technology available. This FDA-approved device combines three wavelengths (755nm, 808nm, and 1064nm) to effectively treat all skin types and tones safely and comfortably.
+                    </p>
+                    <div class="tech-benefits">
+                        <div class="tech-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Safe for all skin types and tones</span>
+                        </div>
+                        <div class="tech-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Advanced cooling technology for comfort</span>
+                        </div>
+                        <div class="tech-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Faster, more comfortable treatments</span>
+                        </div>
+                        <div class="tech-feature">
+                            <span class="feature-icon">✓</span>
+                            <span>Superior permanent hair reduction</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
