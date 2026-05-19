@@ -1,5 +1,4 @@
 {
   "buildCommand": "echo 'build complete'",
-  "outputDirectory": ".",
-  "framework": "html"
+  "outputDirectory": "."
 }
