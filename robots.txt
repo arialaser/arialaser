@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arialaser.ca/sitemap.xml
